@@ -1,4 +1,5 @@
 "use client";
+import { projectSchema } from "./src/sanity/project";
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 import { siteSettings } from "./src/sanity/schema";
@@ -14,6 +15,7 @@ export default defineConfig({
         S.list()
           .title("Innhold")
           .items([
+            S.documentTypeListItem("project").title("Kundeleveranser"),
             S.listItem()
               .title("Bedrift og nettsted")
               .id("siteSettings")
@@ -25,5 +27,5 @@ export default defineConfig({
           ]),
     }),
   ],
-  schema: { types: [siteSettings] },
+  schema: { types: [siteSettings, projectSchema] },
 });

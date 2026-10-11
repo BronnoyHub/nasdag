@@ -13,6 +13,7 @@ export default async function Home() {
         </Link>
         <nav aria-label="Hovedmeny">
           <a href="#tjenester">Tjenester</a>
+          <Link href="/prosjekter">Prosjekter</Link>
           <a href="#kontakt">Kontakt</a>
         </nav>
       </header>
