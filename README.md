@@ -11,7 +11,7 @@ npm ci
 npm run dev
 ```
 
-Forsiden ligger på `/`. Innholdsredigering ligger på `/studio`. Logg inn med Sanity-kontoen og rediger «Bedrift og nettsted». Publisert innhold oppdateres på nettstedet innen omtrent ett minutt. Nettstedet viser tydelige plassholdere til innhold er publisert.
+Forsiden ligger på `/`. Innholdsredigering ligger på `/studio`. Logg inn med Sanity-kontoen og rediger «Bedrift og nettsted». Publisert innhold oppdateres på nettstedet innen omtrent ett minutt. De sju avtalte tjenestene og nye grunntekster vises fra `src/lib/default-content.ts` til innhold er publisert. Det samme innholdet foreslås som startverdier i nye Sanity-dokumenter. Kontaktopplysninger er plassholdere til de er oppgitt.
 
 ## Kontroller
 

@@ -1,8 +1,10 @@
+import { defaultContent } from "@/lib/default-content";
 import Link from "next/link";
 import { getSiteContent } from "@/lib/content";
 export default async function Home() {
   const content = await getSiteContent();
-  const company = content?.companyName || "Nasdag Design og IT";
+  const company = content?.companyName || defaultContent.companyName;
+  const services = content?.services ?? defaultContent.services;
   return (
     <>
       <header>
@@ -17,10 +19,9 @@ export default async function Home() {
       <main>
         <section className="hero">
           <p className="eyebrow">DESIGN · TEKNOLOGI · MULIGHETER</p>
-          <h1>{content?.headline || "Gode ideer. Digitale muligheter."}</h1>
+          <h1>{content?.headline || defaultContent.headline}</h1>
           <p className="intro">
-            {content?.introduction ||
-              "Et nytt nettsted for Nasdag Design og IT er under utvikling. Mer informasjon om virksomheten og tjenestene kommer snart."}
+            {content?.introduction || defaultContent.introduction}
           </p>
           <a className="button" href="#tjenester">
             Utforsk tjenester <span aria-hidden="true">↗</span>
@@ -29,9 +30,9 @@ export default async function Home() {
         <section id="tjenester" className="section">
           <p className="eyebrow">DET VI GJØR</p>
           <h2>Tjenester</h2>
-          {content?.services?.length ? (
+          {services.length ? (
             <div className="cards">
-              {content.services.map((service, i) => (
+              {services.map((service, i) => (
                 <article key={service._key}>
                   <span className="number">
                     {String(i + 1).padStart(2, "0")}

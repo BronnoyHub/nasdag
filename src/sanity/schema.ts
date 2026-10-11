@@ -1,8 +1,10 @@
+import { defaultContent } from "../lib/default-content";
 import { defineField, defineType } from "sanity";
 export const siteSettings = defineType({
   name: "siteSettings",
   title: "Bedrift og nettsted",
   type: "document",
+  initialValue: defaultContent,
   fields: [
     defineField({
       name: "companyName",
